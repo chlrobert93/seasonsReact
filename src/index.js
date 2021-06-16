@@ -1,10 +1,19 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import seasonDisplay from './seasonsDisplay';
+//import seasonsDisplay from 'seasonsDisplay';
+
 
 const App = () => {
-      return (
-      <div>Hi there!</div>);
+      //Obtner geolocalización
+      navigator.geolocation.getCurrentPosition(
+      
+      //Devolución en parametros
+      position => console.log(position),
+      error => console.log(error)
+  );
+   return <div>Hi there!</div>
+  
+            
 };
 
 
