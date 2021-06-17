@@ -29,7 +29,31 @@ class App extends React.Component{
 
             //El objecto state
             //null por que no sabemos que latitud es haora mismo
-            this.state = {lat: null}
+            //Esta es la unica vez que hacemos asignación directa
+            //to this.state
+            this.state = {lat: null, erorMessage: ''};
+            this.state = {long: null};
+      
+
+                //Obtner geolocalización
+                window.navigator.geolocation.getCurrentPosition(
+      
+                  //Devolución en parametros
+                  //position =>console.log(position),
+
+                  position => {
+                    //Para actualizar
+                    this.setState({lat: position.coords.latitude});
+                    //this.setState({long:position.coords.longitude})
+
+                  },
+
+                  // console.log(err)
+                  err => {
+                        this.setState({errorMessage: err.message});
+
+                  }
+              );
 
       }
 
@@ -41,15 +65,13 @@ class App extends React.Component{
       //React va a lanzar un error  y decir que no tiene un métodorenderizado que esté devolviendo cualquier jsx
       render(){
 
-           //Obtner geolocalización
-            window.navigator.geolocation.getCurrentPosition(
-      
-            //Devolución en parametros
-            position => console.log(position),
-            error => console.log(error)
-        );
+       
             //Devolver
-            return <div>Latitud: </div>
+            return (
+                  <div>Latitud:{this.state.lat}<br/>
+                  Error: {this.state.errorMessage}      
+            </div>
+            );
 
       } 
 
