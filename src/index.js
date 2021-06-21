@@ -31,7 +31,7 @@ class App extends React.Component{
             //null por que no sabemos que latitud es haora mismo
             //Esta es la unica vez que hacemos asignación directa
             //to this.state
-            this.state = {lat: null, erorMessage: ''};
+            this.state = {lat: null, errMessage: ''};
             this.state = {long: null};
       
 
@@ -41,7 +41,7 @@ class App extends React.Component{
                   //Devolución en parametros
                   //position =>console.log(position),
 
-                  position => {
+                  (position) => {
                     //Para actualizar
                     this.setState({lat: position.coords.latitude});
                     //this.setState({long:position.coords.longitude})
@@ -49,8 +49,8 @@ class App extends React.Component{
                   },
 
                   // console.log(err)
-                  err => {
-                        this.setState({errorMessage: err.message});
+                  (err )=> {
+                        this.setState({errMessage: err.message});
 
                   }
               );
@@ -58,21 +58,39 @@ class App extends React.Component{
       }
 
 
+      //Definimos una función
+      //Se llamara automáticamente una vez cuando nuestro componente se muestre por primera vez en la pantalla
+      componentDidMount(){
+            console.log('My component was render to the screen');
+      }
+
+      //Definición de función
+      //Se llamará automaticamente cada vez que nuestro componente se actualice
+      componentDidUpdate(){
+             console.log('My component was just updated - it rendered')
+      }
+
+
+
+
+
+
 
       //Método de renderizado
       
       //React tenemos que definir el render si no definimos esta función aqui
-      //React va a lanzar un error  y decir que no tiene un métodorenderizado que esté devolviendo cualquier jsx
+      //React va a lanzar un error  y decir que no tiene un métodorenderizado que esté devolviendo cualquier jsx      
       render(){
 
-       
-            //Devolver
-            return (
-                  <div>Latitud:{this.state.lat}<br/>
-                  Error: {this.state.errorMessage}      
-            </div>
-            );
+         if(this.state.errMessage && !this.state.lat){
+               return <div>Error: {this.state.errMessage}</div>;
+         }
 
+         if(!this.state.errorMessage && this.state.lat){
+               return <div>Latitude: {this.state.lat}</div>;
+         }
+
+         return <div>Loading!</div>
       } 
 
      
