@@ -16,11 +16,12 @@ const App = () => {
 
 class App extends React.Component{
 
-      //L afunción contructora es la primera función que se llamará cada vez que se cree una instancia de esta vlase
-      //Cada vez que creamos una nieva instancia del componente de aplicación y la mostramos en la pantalla
+      //La función constructor es la primera función que se llamará cada vez que se cree una instancia 
+      //Cada vez que creamos una nueva instancia del componente de aplicación y la mostramos en la pantalla
       //Esta función se llamará automática e instantáneamente antes que cualquier otra cosa
       //Para inicializar el state  de un componente
 
+      //Solo tiene un solo propósito es actualizar o inicializar nuestro objecto de state
       constructor (props) {
             //Se nos exige
             //Es una referencia a la función contructura del padre 
@@ -28,46 +29,48 @@ class App extends React.Component{
 
 
             //El objecto state
-            //null por que no sabemos que latitud es haora mismo
-            //Esta es la unica vez que hacemos asignación directa
+            //null por que no sabemos que latitud es ahora  mismo
+            //Esta es la única  vez que hacemos asignación directa
             //to this.state
             this.state = {lat: null, errMessage: ''};
             this.state = {long: null};
       
 
-                //Obtner geolocalización
-                window.navigator.geolocation.getCurrentPosition(
-      
-                  //Devolución en parametros
-                  //position =>console.log(position),
-
-                  (position) => {
-                    //Para actualizar
-                    this.setState({lat: position.coords.latitude});
-                    //this.setState({long:position.coords.longitude})
-
-                  },
-
-                  // console.log(err)
-                  (err )=> {
-                        this.setState({errMessage: err.message});
-
-                  }
-              );
+               
 
       }
 
 
       //Definimos una función
-      //Se llamara automáticamente una vez cuando nuestro componente se muestre por primera vez en la pantalla
-      componentDidMount(){
+      //Se llamará  automáticamente una vez cuando nuestro componente se muestre por primera vez en la pantalla
+      componentDidMount(){/*
             console.log('My component was render to the screen');
+             //Obtener  geolocalización
+             window.navigator.geolocation.getCurrentPosition(
+                  //Devolución en parámetros
+                  //position =>console.log(position),
+                  (position) => {
+                    //Para actualizar
+                    this.setState({lat: position.coords.latitude});
+                    //this.setState({long:position.coords.longitude})
+                  },
+                  // console.log(err)
+                  (err )=> {
+                        this.setState({errMessage: err.message});
+                  }
+              );*/
+              window.navigator.geolocation.getCurrentPosition(
+                  position => this.setState({ lat: position.coords.latitude}),
+                  err => this.setState({ errorMessage: err.message})
+              );
       }
 
       //Definición de función
-      //Se llamará automaticamente cada vez que nuestro componente se actualice
+      //Se llamará automáticamente  cada vez que nuestro componente se actualice
       componentDidUpdate(){
              console.log('My component was just updated - it rendered')
+
+             
       }
 
 
@@ -78,8 +81,8 @@ class App extends React.Component{
 
       //Método de renderizado
       
-      //React tenemos que definir el render si no definimos esta función aqui
-      //React va a lanzar un error  y decir que no tiene un métodorenderizado que esté devolviendo cualquier jsx      
+      //React tenemos que definir el render si no definimos esta función aquí
+      //React va a lanzar un error y decir que no tiene un métodorenderizado que esté devolviendo cualquier jsx      
       render(){
 
          if(this.state.errMessage && !this.state.lat){
