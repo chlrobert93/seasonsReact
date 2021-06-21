@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import SeasonDisplay from './SeasonDisplay'
+
 //import seasonsDisplay from 'seasonsDisplay';
 
 //Estamos creando un clase nueva dentro de JS
@@ -69,12 +71,6 @@ class App extends React.Component{
              
       }
 
-
-
-
-
-
-
       //Método de renderizado
       
       //React tenemos que definir el render si no definimos esta función aquí
@@ -86,7 +82,10 @@ class App extends React.Component{
          }
 
          if(!this.state.errorMessage && this.state.lat){
-               return <div>Latitude: {this.state.lat}</div>;
+
+              //Si podemos tomar el estado de un componenete y pasarlo como apoyo al cildren
+               return  <SeasonDisplay lat={this.state.lat}/> //<div>Latitude: {this.state.lat}</div>;
+
          }
 
          return <div>Loading!</div>
