@@ -15,7 +15,7 @@ const App = () => {
 
 
 class App extends React.Component{
-
+/*
       //La función constructor es la primera función que se llamará cada vez que se cree una instancia 
       //Cada vez que creamos una nueva instancia del componente de aplicación y la mostramos en la pantalla
       //Esta función se llamará automática e instantáneamente antes que cualquier otra cosa
@@ -26,19 +26,15 @@ class App extends React.Component{
             //Se nos exige
             //Es una referencia a la función contructura del padre 
             super(props);
-
-
             //El objecto state
             //null por que no sabemos que latitud es ahora  mismo
             //Esta es la única  vez que hacemos asignación directa
             //to this.state
             this.state = {lat: null, errMessage: ''};
-            this.state = {long: null};
-      
-
-               
-
+            this.state = {long: null};  
       }
+*/
+            state  = {lat: null, errorMessage: ''};
 
 
       //Definimos una función
