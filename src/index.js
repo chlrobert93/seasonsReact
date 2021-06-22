@@ -86,8 +86,10 @@ class App extends React.Component{
               //Si podemos tomar el estado de un componenete y pasarlo como apoyo al cildren
                return(
                  
-                  <div> <SeasonDisplay lat={this.state.lat}/> 
-                  Latitude: {this.state.lat}</div>
+                 // <div> <SeasonDisplay lat={this.state.lat}/> 
+                 // Latitude: {this.state.lat}</div>
+                   <div> <SeasonDisplay lat={this.state.lat}/> </div>
+
                );
 
          }
