@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import SeasonDisplay from './SeasonDisplay'
+import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 //import seasonsDisplay from 'seasonsDisplay';
 
@@ -94,7 +95,7 @@ class App extends React.Component{
 
          }
 
-         return <div>Loading!</div>
+         return <Spinner />;
       } 
 
      
