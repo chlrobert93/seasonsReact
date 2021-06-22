@@ -59,7 +59,7 @@ class App extends React.Component{
               );*/
               window.navigator.geolocation.getCurrentPosition(
                   position => this.setState({ lat: position.coords.latitude}),
-                  err => this.setState({ errorMessage: err.message})
+                  err => this.setState({ errorMessage: err.message}),
               );
       }
 
@@ -84,7 +84,11 @@ class App extends React.Component{
          if(!this.state.errorMessage && this.state.lat){
 
               //Si podemos tomar el estado de un componenete y pasarlo como apoyo al cildren
-               return  <SeasonDisplay lat={this.state.lat}/> //<div>Latitude: {this.state.lat}</div>;
+               return(
+                 
+                  <div> <SeasonDisplay lat={this.state.lat}/> 
+                  Latitude: {this.state.lat}</div>
+               );
 
          }
 
