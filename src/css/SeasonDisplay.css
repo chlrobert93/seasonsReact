@@ -1,0 +1,84 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    overflow-x:hidden;
+    font-size: 62.5%;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+.icon-left{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+
+}
+
+.icon-right{
+     position: absolute;
+     bottom: 1rem;
+     right: 1rem;
+   
+
+}
+
+.seasonDisplay.winter i{
+ color: #0052d4;
+}
+
+
+.seasonDisplay.sumer i{
+   
+    color: #ed213a; 
+
+}
+
+.seasonDisplay{
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    height:  100vh;
+  
+}
+
+.winter{
+    background-image: linear-gradient(to bottom, #9cecfb, #65c7f7, #0052d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: 40rem;
+}
+
+.sumer{
+    background: linear-gradient(to right, #ff512f, #f09819); 
+    font-size: 3.6rem;
+
+}
+
+h1{
+    font-size: 4.6rem;
+    
+}
+
+.seasonDisplay.winter h1{
+    text-transform: uppercase;    
+    background: linear-gradient(to top, #1e3c72, #2a5298); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    color: transparent;
+   }
+   .seasonDisplay.sumer h1{
+    text-transform: uppercase;
+    background: linear-gradient(to top, #c31432, #240b36); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s;
+}
+
+
+
