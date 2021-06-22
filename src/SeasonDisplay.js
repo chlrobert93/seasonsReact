@@ -17,11 +17,14 @@ const SeasonDisplay = (props) => {
     //console.log(props.lat);
 
     const text = season === 'winter' ? 'Burn, it is chilly' : 'Lets hit the beach';
+    const icon = season === 'winter' ? 'huge blue snowflake loading' : 'huge red sun loading';
 
     return (
         <div>
-            <h1>{text}</h1>
-        </div>
+            <i className={`${icon} icon`} />
+              <h1>{text}</h1>
+            <i className={`${icon} icon`} />     
+       </div>
     );
 };
 
