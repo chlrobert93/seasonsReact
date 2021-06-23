@@ -3,6 +3,8 @@ import ReactDom from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
 import Spinner from './Spinner';
 
+
+
 //import seasonsDisplay from 'seasonsDisplay';
 
 //Estamos creando un clase nueva dentro de JS
@@ -59,6 +61,7 @@ class App extends React.Component{
                   }
               );*/
               window.navigator.geolocation.getCurrentPosition(
+                  //Para actualizar
                   position => this.setState({ lat: position.coords.latitude}),
                   err => this.setState({ errorMessage: err.message}),
               );
@@ -72,32 +75,45 @@ class App extends React.Component{
              
       }
 
-      //Método de renderizado
+
+
+  renderContent(){
+             
+         if(this.state.errMessage && !this.state.lat){
+            return <div>Error: {this.state.errMessage}</div>;
+      }
+
+      if(!this.state.errorMessage && this.state.lat){
+           //Si podemos tomar el estado de un componenete y pasarlo como apoyo al cildren
+            return(
+              
+              // <div> <SeasonDisplay lat={this.state.lat}/> 
+              // Latitude: {this.state.lat}</div>
+                 <SeasonDisplay lat={this.state.lat}/> 
+
+            );
+
+      }
+
+      return(
+       <div className="red"> 
+          <Spinner  message="Please accept location request" />
+      </div>
       
+      );
+   } 
+
+       
+      //Método de renderizado 
       //React tenemos que definir el render si no definimos esta función aquí
       //React va a lanzar un error y decir que no tiene un métodorenderizado que esté devolviendo cualquier jsx      
       render(){
-
-         if(this.state.errMessage && !this.state.lat){
-               return <div>Error: {this.state.errMessage}</div>;
-         }
-
-         if(!this.state.errorMessage && this.state.lat){
-
-              //Si podemos tomar el estado de un componenete y pasarlo como apoyo al cildren
-               return(
-                 
-                 // <div> <SeasonDisplay lat={this.state.lat}/> 
-                 // Latitude: {this.state.lat}</div>
-                   <div> <SeasonDisplay lat={this.state.lat}/> </div>
-
-               );
-
-         }
-
-         return <Spinner  message="Please accept location request" />;
-      } 
-
+      return (    
+            <div className="red">
+                {this.renderContent()}
+            </div>
+      );
+  }
      
 }
 

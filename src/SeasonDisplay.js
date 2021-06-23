@@ -1,6 +1,26 @@
 import './css/SeasonDisplay.css'
 import React from 'react';
 
+const SeasonDisplay = (props) => {
+
+    const season = getSeason(props.lat, new Date().getMonth());
+    console.log(season);
+    //console.log(props.lat);
+
+     //const text = season === 'winter' ? 'Burn, it is chilly' : 'Lets hit the beach';
+     //const icon = season === 'winter' ? 'huge blue snowflake loading' : 'huge red sun loading';
+
+     const {  text,iconName } = seasonConfig[season];
+
+    return (
+        <div className={`seasonDisplay ${season}`}>
+            <i className={`icon-left ${iconName} icon`} />
+              <h1 className={`seasonDisplay`}>{text}</h1>
+            <i className={`icon-right ${iconName} icon`} />     
+       </div>
+    );
+};
+
 
 //Crear Objecto
 
@@ -30,25 +50,6 @@ const getSeason = (lat, month) => {
           }
 }
 
-const SeasonDisplay = (props) => {
-
-    const season = getSeason(props.lat, new Date().getMonth());
-    console.log(season);
-    //console.log(props.lat);
-
-     //const text = season === 'winter' ? 'Burn, it is chilly' : 'Lets hit the beach';
-     //const icon = season === 'winter' ? 'huge blue snowflake loading' : 'huge red sun loading';
-
-     const {  text,iconName } = seasonConfig[season];
-
-    return (
-        <div className={`seasonDisplay ${season}`}>
-            <i className={`icon-left ${iconName} icon`} />
-              <h1 className={`seasonDisplay`}>{text}</h1>
-            <i className={`icon-right ${iconName} icon`} />     
-       </div>
-    );
-};
 
 
 
