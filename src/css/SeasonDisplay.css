@@ -19,6 +19,7 @@ body{
     position: absolute;
     top: 1rem;
     left: 1rem;
+    font-size: 1rem;
 
 }
 
@@ -50,13 +51,12 @@ body{
 }
 
 .winter{
-    background-image: linear-gradient(to bottom, #9cecfb, #65c7f7, #0052d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    font-weight: 40rem;
+    background-image: linear-gradient(to bottom, #9cecfb, #65c7f7, #0052d4);
+
 }
 
 .sumer{
     background: linear-gradient(to right, #ff512f, #f09819); 
-    font-size: 3.6rem;
 
 }
 
@@ -64,6 +64,8 @@ h1{
     font-size: 4.6rem;
     
 }
+
+
 
 .seasonDisplay.winter h1{
     text-transform: uppercase;    
@@ -88,3 +90,4 @@ h1{
 .border{
     border: 1px solid red;
 }
+

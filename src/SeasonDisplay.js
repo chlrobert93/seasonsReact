@@ -27,11 +27,11 @@ const SeasonDisplay = (props) => {
 const seasonConfig = {
     sumer: {
         text: "Let's hit the beach!",
-        iconName: 'massive sun  '
+        iconName: 'massive loading sun  '
     },
     winter: {
         text: 'Burr it is cold!',
-        iconName: 'massive snowflake '
+        iconName: 'massive loading snowflake '
     }
 };
 
