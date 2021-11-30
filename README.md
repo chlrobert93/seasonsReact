@@ -20,12 +20,19 @@ Proyecto estaciones es mostrar si es invierno o verano usando la geolocalizació
 
 Hemisferio norte.
 
-0    1    2    |3    4    5    6    7    8    |9    10    11
-Jun  Feb  Mar  |Apr  May  Jun  Jul  Aug  Sep  |Oct  Nov   Dec
-    Invierno   |            Verano            |  Invierno
+| Invierno          | Verano                       | Invierno          | 
+|-------------------|------------------------------|-------------------|
+| 0    1    2       | 3    4    5    6    7    8   | 9    10    11     |
+| Jun  Feb  Mar     | Apr  May  Jun  Jul  Aug  Sep | Oct  Nov   Dec    | 
+
+
+
+
 
 Hemisferio Sur.
 
-0    1    2    |3    4    5    6    7    8    |9    10    11
-Jun  Feb  Mar  |Apr  May  Jun  Jul  Aug  Sep  |Oct  Nov   Dec
-    Verano     |           Invierno           |   Verano
+
+| Verano            | Invierno                       | Verano          | 
+|-------------------|------------------------------|-------------------|
+| 0    1    2       | 3    4    5    6    7    8   | 9    10    11     |
+| Jun  Feb  Mar     | Apr  May  Jun  Jul  Aug  Sep | Oct  Nov   Dec    | 
