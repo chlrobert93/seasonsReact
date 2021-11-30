@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
 import Spinner from './Spinner';
-import "semantic-ui-css/semantic.min.css";
+import 'semantic-ui-css/semantic.min.css';
 
 
 class App extends React.Component{
@@ -13,10 +13,9 @@ class App extends React.Component{
 
            state  = {lat: null, errorMessage: ''};
 
-      //Definimos una función
+
       //Se llamará  automáticamente una vez cuando nuestro componente se muestre por primera vez en la pantalla
       componentDidMount(){
-            //console.log('My component was render to the screen');
              //Obtener  geolocalización
               window.navigator.geolocation.getCurrentPosition(
                   //Para actualizar
@@ -25,13 +24,7 @@ class App extends React.Component{
               );
       }
 
-      //Definición de función
-      //Se llamará automáticamente  cada vez que nuestro componente se actualice
-      componentDidUpdate(){
-             console.log('My component was just updated - it rendered')
-
-             
-      }
+     
 
 
   renderContent(){
@@ -41,7 +34,6 @@ class App extends React.Component{
       }
 
       if(!this.state.errorMessage && this.state.lat){
-           //Si podemos tomar el estado de un componenete y pasarlo como apoyo al cildren
             return(
               
 

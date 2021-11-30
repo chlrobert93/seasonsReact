@@ -9,7 +9,6 @@ const Spinner = (props) => {
 };
 
 //Object esto proporcionará algunas propiedades predeterimnadas para este componente
-//En caso de que no agregen un ms al spinner
 Spinner.defaultProps ={
   message: 'Loading...' 
 };

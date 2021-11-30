@@ -4,8 +4,6 @@ import React from 'react';
 const SeasonDisplay = (props) => {
 
     const season = getSeason(props.lat, new Date().getMonth());
-    console.log(season);
-    //console.log(props.lat);
 
      //const text = season === 'winter' ? 'Burn, it is chilly' : 'Lets hit the beach';
      //const icon = season === 'winter' ? 'huge blue snowflake loading' : 'huge red sun loading';
@@ -23,7 +21,6 @@ const SeasonDisplay = (props) => {
 
 
 //Crear Objecto
-
 const seasonConfig = {
     sumer: {
         text: "Let's hit the beach!",
@@ -38,8 +35,7 @@ const seasonConfig = {
 
 
 const getSeason = (lat, month) => {
-    console.log(lat);
-    console.log(month);
+    
 
           if(month > 2 && month < 9){
               //Expreción ternaria
